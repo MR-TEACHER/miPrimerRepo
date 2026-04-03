@@ -1,30 +1,65 @@
-## 🐛 Bug Report
-
-### Descripción
-
-Describe claramente el error que has encontrado. Incluye detalles sobre cómo se presenta el problema.
-
-### Pasos para reproducir
-
-1. Ir a '...'
-2. Hacer clic en '...'
-3. Describir cualquier otra acción hasta que ocurra el problema.
-4. Error que aparece: '...'
-
-### Comportamiento esperado
-
-Describe lo que esperabas que ocurriera al realizar los pasos anteriores.
-
-### Capturas de pantalla o registros
-
-Si es posible, añade capturas de pantalla o registros de errores.
-
-### Entorno
-
-- Sistema operativo: [p. ej., Windows 10, macOS Catalina]
-
-- Navegador y versión: [p. ej., Chrome 87, Safari 14]
-
-- Versión del proyecto: [p. ej., 1.0.0]
-
-### Información adicional
+name: Bug Report
+description: Reporta un bug que encontraste
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "## 🐛 Bug Report"
+  
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: "Descripción"
+      description: "Describe claramente el error que has encontrado"
+      placeholder: "El error ocurre cuando..."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: pasos
+    attributes:
+      label: "Pasos para reproducir"
+      description: "¿Cómo reproducir el problema?"
+      placeholder: |
+        1. Ir a '...'
+        2. Hacer clic en '...'
+        3. Error que aparece
+    validations:
+      required: true
+  
+  - type: textarea
+    id: esperado
+    attributes:
+      label: "Comportamiento esperado"
+      description: "¿Qué esperabas que ocurriera?"
+      placeholder: "Debería..."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: capturas
+    attributes:
+      label: "Capturas de pantalla"
+      description: "Si es posible, añade capturas"
+  
+  - type: dropdown
+    id: so
+    attributes:
+      label: "Sistema operativo"
+      options:
+        - Windows 10
+        - Windows 11
+        - macOS
+        - Linux
+        - Otro
+    validations:
+      required: true
+  
+  - type: input
+    id: version
+    attributes:
+      label: "Versión del proyecto"
+      placeholder: "1.0.0"
+    validations:
+      required: true
